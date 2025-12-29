@@ -105,7 +105,7 @@ function BannerHomeSection() {
                                     <div className="banner-video-content order-lg-1 order-2">
                                         <div className="d-flex flex-column flex-lg-row text-lg-start text-center align-items-center gspace-5">
                                             {/* Replace YOUR_PHONE_NUMBER with your actual number (e.g., 1234567890) */}
-                                            <WhatsAppButton phoneNumber="+9715882866480" />
+                                            <WhatsAppButton phoneNumber="05882866480" />
                                             
                                             <p className="mb-0">
                                                 <strong>Connect on WhatsApp</strong><br />

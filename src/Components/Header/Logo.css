@@ -1,0 +1,43 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Arial', sans-serif; /* Use your site's font */
+  font-weight: 700;
+  font-size: 32px;
+  color: #ffffff; /* Main text color */
+}
+
+.logo-text {
+  letter-spacing: -1px;
+}
+
+.rotating-o {
+  width: 28px;
+  height: 28px;
+  margin: 0 2px;
+  border-radius: 8px; /* Slightly rounded square like your reference */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #007bff, #e83e8c, #6610f2);
+  animation: rotateLogo 4s linear infinite;
+  box-shadow: 0 0 10px rgba(102, 16, 242, 0.5);
+}
+
+/* Creating the "hole" in the O */
+.inner-gradient-shape {
+  width: 14px;
+  height: 14px;
+  background-color: #000; /* Match your navbar background color */
+  border-radius: 4px;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import VideoButton from "../Video/VideoButton";
+import WhatsAppButton from "../Video/VideoButton";
 import AnimateOnScroll from "../Hooks/AnimateOnScroll";
 
 function BannerHomeSection() {
@@ -78,18 +78,6 @@ function BannerHomeSection() {
             iframe.style.height = `${newHeight}px`;
         }
 
-        function handleYouTubeErrors() {
-            window.addEventListener('message', function(event) {
-                if (event.origin !== 'https://www.youtube.com') return;
-            
-                try {
-                    var data = JSON.parse(event.data);
-                   
-                } catch (e) {
-         
-                }
-            });
-        }
 
         return () => {
             window.removeEventListener("resize", setYoutubeSize);
@@ -116,9 +104,12 @@ function BannerHomeSection() {
                                 <AnimateOnScroll animation="fadeInUp" speed="normal">
                                     <div className="banner-video-content order-lg-1 order-2">
                                         <div className="d-flex flex-column flex-lg-row text-lg-start text-center align-items-center gspace-5">
-                                            <VideoButton videoUrl="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" />
-                                            <p>
-                                                Watch our video reviews and see how businesses achieve success
+                                            {/* Replace YOUR_PHONE_NUMBER with your actual number (e.g., 1234567890) */}
+                                            <WhatsAppButton phoneNumber="+9715882866480" />
+                                            
+                                            <p className="mb-0">
+                                                <strong>Connect on WhatsApp</strong><br />
+                                                Chat with our team and see how businesses achieve success 
                                                 with incorelab's digital marketing solutions.
                                             </p>
                                         </div>

@@ -1,22 +1,63 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useNav } from "../Context/NavContext";
+import "./Logo.css";
+
 
 function Navbar() {
 const { isDropdownActive } = useNav();
+
 
 return (
     <div className="navbar-wrapper">
         <nav className="navbar navbar-expand-lg">
             <div className="navbar-container">
                 <div className="logo-container">
-                    <NavLink className="navbar-brand" to="/">
-                    <img
-                        src="/assets/images/incorelab-logo.png"
-                        className="site-logo img-fluid"
-                        alt="Logo"
-                    />
-                    </NavLink>
+                    <NavLink className="navbar-brand d-flex align-items-center" to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+  {/* Injecting Font and Rotation Animation */}
+  <style>{`
+    @import url('https://fonts.cdnfonts.com/css/open-sauce-one');
+    @keyframes slowRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  `}</style>
+  
+  <div style={{ 
+    display: 'flex', 
+    alignItems: 'center', 
+    fontFamily: '"Open Sauce One", sans-serif', 
+    fontSize: '42px', 
+    color: '#ffffff',
+    lineHeight: '1'
+  }}>
+    {/* BOLD SECTION */}
+    <span style={{ fontWeight: '800', letterSpacing: '1.5px' }}>Inc</span>
+    
+    {/* ROTATING IMAGE O */}
+    <div style={{ 
+      width: '30px', 
+      height: '30px', 
+      margin: '0 2px', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      position: 'relative', // Allows for top adjustment
+      top: '4px',           // Moves the element down
+      animation: 'slowRotate 8s linear infinite' // Slow rotation to keep it elegant
+    }}>
+      <img 
+        src="assets/images/Logo O.png"
+        alt="o" 
+        style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+      />
+    </div>
+    {/* BOLD SECTION */}
+    <span style={{ fontWeight: '800', letterSpacing: '1.5px' }}>re</span>
+    {/* REGULAR SECTION */}
+    <span style={{ fontWeight: '400', letterSpacing: '1px' }}>lab</span>
+  </div>
+</NavLink>
                 </div>
 
                 <button

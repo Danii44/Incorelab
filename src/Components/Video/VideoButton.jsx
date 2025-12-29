@@ -1,14 +1,20 @@
 import React from "react";
-import { useModalVideo } from "./ModalVideoContext";
 
-function VideoButton({ videoUrl }) {
-  const { openModal } = useModalVideo();
+function WhatsAppButton({ phoneNumber, message = "Hello, I'm interested in your services!" }) {
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  const handleClick = () => {
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
 
   return (
-    <button className="request-loader" onClick={() => openModal(videoUrl)}>
-        <i className="fa-solid fa-play"></i>
+    <button 
+      className="request-loader" 
+      onClick={handleClick}
+    >
+      <i className="fa-brands fa-whatsapp" style={{ color: '#fff' }}></i>
     </button>
   );
 }
 
-export default VideoButton;
+export default WhatsAppButton;
